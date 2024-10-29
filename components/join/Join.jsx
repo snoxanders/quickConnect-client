@@ -8,7 +8,7 @@ export default function Join({ setChatVisibility, setSocket }) {
   const handleSubmit = async () => {
     const username = usernameRef.current.value;
     if (!username.trim()) return;
-    const socket = await io.connect('wss://quickconnect-server-production.up.railway.app');
+    const socket = await io.connect('https://quickconnect-server-production.up.railway.app');
 
     socket.emit('set_username', username);
     setSocket(socket);
